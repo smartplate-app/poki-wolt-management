@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>POKI WOLT MANAGEMENT | תהליך ניהול וולט לפוקי</title>
+<meta name="description" content="POKI WOLT MANAGEMENT: תהליך מודרך בשישה שלבים לניהול וולט. קישור קצר לפרופיל בתוך אפליקציית וולט, ריל על מנה אחת, תקציב פרסום יומי, ניהול משלוחים בזמן שירות וטיפול בלקוחות לא מרוצים.">
+<meta name="robots" content="index,follow">
+<style>
+:root{--ink:#1d1b2e;--teal:#14b8a6;--orange:#ff7a1a;--pink:#ff3d81;--yellow:#ffd23f;--bg:#fff8ef;--card:#fff}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Segoe UI",Arial,Helvetica,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;font-size:18px}
+a{color:inherit}
+.wrap{max-width:900px;margin:auto;padding:0 18px}
+
+/* hero */
+.hero{background:linear-gradient(135deg,var(--pink),var(--orange) 55%,var(--yellow));color:#fff;padding:34px 0 70px;text-align:center;position:relative;overflow:hidden}
+.hero img.logo{height:46px;background:#fff;border-radius:12px;padding:6px 12px;margin-bottom:18px}
+.hero h1{font-size:clamp(30px,6vw,52px);font-weight:900;line-height:1.15;letter-spacing:.5px;text-shadow:0 3px 0 rgba(0,0,0,.15)}
+.hero p{font-size:clamp(17px,2.6vw,22px);margin-top:12px;font-weight:600}
+.bubble{position:absolute;border-radius:50%;background:rgba(255,255,255,.18);animation:float 7s ease-in-out infinite}
+.b1{width:120px;height:120px;top:10%;right:6%}.b2{width:70px;height:70px;bottom:18%;left:9%;animation-delay:1.5s}.b3{width:46px;height:46px;top:32%;left:24%;animation-delay:3s}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-18px)}}
+.hero svg.wave{position:absolute;bottom:-1px;left:0;width:100%;height:40px}
+
+/* flow rail */
+.flow{margin-top:-30px;position:relative;z-index:2}
+.rail{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;background:var(--card);border-radius:20px;padding:14px;box-shadow:0 10px 30px rgba(29,27,46,.12)}
+.rail a{text-decoration:none;font-weight:800;font-size:14px;padding:8px 13px;border-radius:999px;background:#f1f5f9;position:relative;white-space:nowrap}
+.rail a:nth-child(1){background:#d7f7f2}.rail a:nth-child(2){background:#ffe7d2}.rail a:nth-child(3){background:#ffd9e8}
+.rail a:nth-child(4){background:#fff1b8}.rail a:nth-child(5){background:#e6dcff}.rail a:nth-child(6){background:#d6f5d6}
+.rail a{animation:pulse 6s infinite}
+.rail a:nth-child(2){animation-delay:1s}.rail a:nth-child(3){animation-delay:2s}.rail a:nth-child(4){animation-delay:3s}.rail a:nth-child(5){animation-delay:4s}.rail a:nth-child(6){animation-delay:5s}
+@keyframes pulse{0%,100%{transform:scale(1)}8%{transform:scale(1.12)}16%{transform:scale(1)}}
+
+/* steps */
+.step{margin:46px 0;display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:center;background:var(--card);border-radius:28px;padding:26px;box-shadow:0 8px 26px rgba(29,27,46,.08);position:relative}
+.step:nth-of-type(even){direction:ltr}.step:nth-of-type(even) .txt{direction:rtl}
+.num{position:absolute;top:-22px;right:22px;width:52px;height:52px;border-radius:50%;display:grid;place-items:center;font-weight:900;font-size:24px;color:#fff;box-shadow:0 6px 0 rgba(0,0,0,.15);animation:bounce 2.4s infinite}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+.step img.pic{width:100%;border-radius:22px;animation:sway 5s ease-in-out infinite}
+@keyframes sway{0%,100%{transform:rotate(-1.2deg)}50%{transform:rotate(1.2deg) scale(1.02)}}
+.step h2{font-size:clamp(23px,3.8vw,32px);line-height:1.2;margin-bottom:10px}
+.step ul{list-style:none}
+.step li{padding:8px 0 8px 0;display:flex;gap:10px;align-items:flex-start}
+.step li::before{content:"✔";color:var(--teal);font-weight:900;flex:none}
+.tag{display:inline-block;font-weight:800;font-size:14px;padding:3px 12px;border-radius:999px;margin-bottom:10px}
+.s1 .num{background:var(--teal)}.s1 .tag{background:#d7f7f2;color:#0b6b60}
+.s2 .num{background:var(--orange)}.s2 .tag{background:#ffe7d2;color:#9a4300}
+.s3 .num{background:var(--pink)}.s3 .tag{background:#ffd9e8;color:#a3123f}
+.s4 .num{background:#e0a800}.s4 .tag{background:#fff1b8;color:#7a5a00}
+.s5 .num{background:#7c4dff}.s5 .tag{background:#e6dcff;color:#4b22b5}
+.warn{background:#fff3cd;border-radius:14px;padding:10px 14px;font-weight:700;margin-top:10px}
+
+/* budget bar */
+.budget{margin-top:14px}
+.budget .big{font-size:42px;font-weight:900;color:var(--pink);line-height:1}
+.bar{display:flex;height:34px;border-radius:999px;overflow:hidden;margin-top:12px;font-size:13px;font-weight:800;color:#fff}
+.bar span{display:grid;place-items:center;animation:grow 1.8s ease-out both}
+.bar .ig{flex:5;background:var(--pink)}.bar .wb{flex:2;background:var(--orange)}.bar .qr{flex:2;background:var(--teal)}
+@keyframes grow{from{flex:0.01}}
+
+/* 30 minute clock */
+.s4{display:block}
+.clock{display:flex;align-items:stretch;gap:0;margin:16px 0;border-radius:18px;overflow:hidden;font-weight:800;text-align:center;color:#fff}
+.clock div{padding:16px 6px;animation:fill 3s ease-out both}
+.clock .a{flex:10;background:#ff8a00}.clock .b{flex:10;background:#ff3d81;animation-delay:.6s}.clock .c{flex:20;background:#14b8a6;animation-delay:1.2s}
+.clock small{display:block;font-weight:600;font-size:13px;opacity:.95}
+@keyframes fill{from{opacity:0;transform:scaleX(.2)}}
+.preview{background:#fffaf0;border:3px dashed var(--orange);border-radius:20px;padding:18px;margin-top:10px}
+.preview ol{padding-inline-start:22px}.preview li{padding:3px 0}.preview li::before{content:none}
+.btn{display:inline-block;margin-top:14px;background:linear-gradient(135deg,var(--pink),var(--orange));color:#fff;font-weight:900;text-decoration:none;padding:15px 28px;border-radius:999px;box-shadow:0 7px 0 rgba(0,0,0,.18);font-size:19px;animation:wiggle 3s infinite}
+@keyframes wiggle{0%,92%,100%{transform:rotate(0)}95%{transform:rotate(-2.5deg)}98%{transform:rotate(2.5deg)}}
+.btn:active{transform:translateY(4px);box-shadow:0 3px 0 rgba(0,0,0,.18)}
+
+/* unhappy customers flow */
+.fix{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px}
+.fix div{background:#f6f2ff;border-radius:16px;padding:12px 8px;text-align:center;font-weight:700;font-size:15px;position:relative;animation:pop 8s infinite}
+.fix div b{display:block;font-size:26px}
+.fix div:nth-child(2){animation-delay:2s}.fix div:nth-child(3){animation-delay:4s}.fix div:nth-child(4){animation-delay:6s}
+@keyframes pop{0%,25%,100%{transform:scale(1);background:#f6f2ff}10%{transform:scale(1.07);background:#d9c8ff}}
+
+.foot{text-align:center;padding:40px 18px 60px;color:#6b6880;font-size:15px}
+.foot strong{color:var(--ink)}
+@media(max-width:720px){.step{grid-template-columns:1fr;padding:22px 16px}.step:nth-of-type(even){direction:rtl}.fix{grid-template-columns:1fr 1fr}body{font-size:17px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <span class="bubble b1"></span><span class="bubble b2"></span><span class="bubble b3"></span>
+  <div class="wrap">
+    <img class="logo" src="logo.png" alt="Smart Plate">
+    <h1>POKI WOLT MANAGEMENT</h1>
+    <p>התהליך המלא לניהול וולט של פוקי. חמישה שלבים, צעד אחרי צעד.</p>
+  </div>
+  <svg class="wave" viewBox="0 0 1440 40" preserveAspectRatio="none"><path fill="#fff8ef" d="M0 40V18c180 22 360 22 540 8 200-16 380-22 560-6 120 10 240 4 340-8v28z"/></svg>
+</header>
+
+<div class="wrap flow">
+  <nav class="rail" aria-label="שלבי התהליך">
+    <a href="#s1">1 קישור קצר</a><a href="#s2">2 ריל</a><a href="#s3">3 פרסום</a><a href="#s4">4 בזמן שירות</a><a href="#s5">5 לקוחות מרוצים</a>
+  </nav>
+</div>
+
+<main class="wrap">
+
+  <section class="step s1" id="s1">
+    <span class="num">1</span>
+    <div class="txt">
+      <span class="tag">קישור</span>
+      <h2>קישור קצר שפותח את פוקי בתוך וולט</h2>
+      <ul>
+        <li>מכינים קישור קצר שמוביל ישר לפרופיל של פוקי באפליקציית וולט.</li>
+        <li>הקישור פותח את האפליקציה עצמה, <b>לא דפדפן</b>.</li>
+        <li>את הקישור הזה שמים בכל מקום: ריל, סטורי, באנר ופלייר.</li>
+      </ul>
+      <p class="warn">לפני שמפרסמים: פותחים את הקישור מהטלפון ומוודאים שהוא נפתח בתוך וולט.</p>
+    </div>
+    <img class="pic" src="step1.jpg" alt="קישור קצר שנפתח ישירות בתוך אפליקציית וולט" loading="lazy">
+  </section>
+
+  <section class="step s2" id="s2">
+    <span class="num">2</span>
+    <div class="txt">
+      <span class="tag">תוכן אורגני</span>
+      <h2>סיפור אורגני על מנה אחת</h2>
+      <ul>
+        <li>בוחרים מנה אחת מובילה ומספרים עליה סיפור.</li>
+        <li>או עושים ריל על מנה אחת בלבד.</li>
+        <li>מסיימים את הריל בבוסט פשוט שמוביל ל״להזמין עכשיו״.</li>
+        <li>הלחיצה על הכפתור מגיעה לקישור הקצר מהשלב הראשון.</li>
+      </ul>
+    </div>
+    <img class="pic" src="step2.jpg" alt="ריל על מנת פוקי אחת עם כפתור להזמין עכשיו" loading="lazy">
+  </section>
+
+  <section class="step s3" id="s3">
+    <span class="num">3</span>
+    <div class="txt">
+      <span class="tag">פרסום</span>
+      <h2>תקציב פרסום יומי</h2>
+      <div class="budget">
+        <div class="big">196 ₪ ליום</div>
+        <div>באינסטגרם. את שאר התקציב מפזרים על:</div>
+        <div class="bar"><span class="ig">אינסטגרם</span><span class="wb">באנרים בוולט</span><span class="qr">פלייר QR</span></div>
+      </div>
+      <ul style="margin-top:12px">
+        <li>באנרים בתוך וולט.</li>
+        <li>פלייר עם ברקוד שמוביל לוואטסאפ.</li>
+      </ul>
+    </div>
+    <img class="pic" src="step3.jpg" alt="חלוקת תקציב פרסום יומי" loading="lazy">
+  </section>
+
+  <section class="step s4" id="s4">
+    <span class="num">4</span>
+    <span class="tag">ניהול בזמן שירות</span>
+    <h2>ניהול וולט בזמן שירות</h2>
+    <p>כל הזמנה רצה על שעון של 30 דקות, מהרגע שהלקוח הזמין.</p>
+    <div class="clock">
+      <div class="a">0 עד 10<small>מטבח, צ׳קר ולחיצה על ״מוכן״</small></div>
+      <div class="b">10<small>״מוכן״</small></div>
+      <div class="c">10 עד 30<small>השליח בדרך ללקוח, 20 דקות</small></div>
+    </div>
+    <div class="preview">
+      <b>תצוגה מקדימה של הנוהל:</b>
+      <ol>
+        <li>ההזמנה נכנסת מוולט והשעון מתחיל.</li>
+        <li>המטבח מכין, 9 עד 12 דקות.</li>
+        <li>הצ׳קר בודק כל פריט, כולל כל רוטב ארוז בנפרד.</li>
+        <li>לוחצים ״מוכן״ עד דקה 10, עם עוגייה במתנה.</li>
+        <li>ההזמנה אצל הלקוח עד דקה 30.</li>
+        <li>שואלים אם היה טוב: ברקוד או שיחת טלפון.</li>
+      </ol>
+    </div>
+    <a class="btn" href="https://134-122-4-91.nip.io/offer-en/delivery-management-33c3a22d3e/" target="_blank" rel="noopener">לפתוח את נוהל ניהול המשלוחים המלא ←</a>
+  </section>
+
+  <section class="step s5" id="s5">
+    <span class="num">5</span>
+    <div class="txt">
+      <span class="tag">לקוחות מרוצים</span>
+      <h2>הופכים לקוח לא מרוצה למרוצה</h2>
+      <ul>
+        <li>מתקשרים לכל לקוח שיש לו <b>יותר מ-3 מנות</b>.</li>
+        <li>מתקשרים לכל לקוח ש<b>וולט אמרו שהוא לא מרוצה</b>.</li>
+        <li>מתקשרים לכל לקוח שנתן לנו <b>ציון שלילי</b>.</li>
+        <li>שולחים לו פתרון תוך <b>15 עד 20 דקות</b> מהשיחה.</li>
+        <li>בודקים בטלפון שהוא <b>מרוצה מאוד</b>.</li>
+        <li>רק אז מבקשים ממנו, בשיחה, לשנות את הציון.</li>
+      </ul>
+      <div class="fix">
+        <div><b>📞</b>מתקשרים</div>
+        <div><b>🛵</b>פתרון תוך 15 עד 20 דקות</div>
+        <div><b>😊</b>מוודאים שמרוצה מאוד</div>
+        <div><b>⭐</b>מבקשים לשנות ציון</div>
+      </div>
+    </div>
+    <img class="pic" src="step5.jpg" alt="שיחת טלפון ללקוח ופיצוי מהיר שהופך ציון שלילי לחיובי" loading="lazy">
+  </section>
+
+</main>
+
+<footer class="foot">
+  <p><strong>POKI WOLT MANAGEMENT</strong> | Smart Plate</p>
+</footer>
+
+</body>
+</html>
